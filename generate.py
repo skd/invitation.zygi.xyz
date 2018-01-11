@@ -8,7 +8,7 @@ def run():
     """
     void main(char* argv[])
     """
-    for lang in ['en']:
+    for lang in ['en', 'lt', 'ru']:
         with open('index_%s.html' % lang) as html, \
                 open('guests_%s.csv' % lang) as csv_file:
             template = Template(html.read(), autoescape=True)
