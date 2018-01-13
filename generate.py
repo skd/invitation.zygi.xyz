@@ -19,7 +19,7 @@ def run():
                 output_path = 'invitation_%s.html' % code
                 with open(output_path, 'w') as output:
                     output.write(template.render(name=names))
-                print(names, output_path)
+                print(names + "," + output_path)
 
 if __name__ == "__main__":
     run()
