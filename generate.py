@@ -15,7 +15,7 @@ def run():
             guest_reader = csv.reader(csv_file)
             for row in guest_reader:
                 names = row[0]
-                code = base64.b64encode(str.encode(names)).decode()[:5]
+                code = base64.b64encode(str.encode(names)).decode()[-8:-3]
                 output_path = 'invitation_%s.html' % code
                 with open(output_path, 'w') as output:
                     output.write(template.render(name=names))
