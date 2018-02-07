@@ -16,7 +16,9 @@ def run():
             guest_reader = csv.reader(csv_file)
             for row in guest_reader:
                 names = row[0]
-                code = base64.b64encode(str.encode(names)).decode()[-10:-3]
+                code = base64.b64encode(str.encode(names)).decode()[-10:-3] \
+                    .replace("/", "_")
+                print(code)
                 while code in used_hashes:
                     code += "a"
                 used_hashes.append(code)
